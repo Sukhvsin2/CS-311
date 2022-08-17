@@ -1,0 +1,9 @@
+# Date 8-17-2022
+
+Level 6 : User applications, Abstraction
+Level 5 : High Level Language
+Level 4 : Low Level Languages, assembler
+Level 3 : OS and System Softwares
+Level 2 : Machine Code, ISA(instruction set architechture)
+Level 1 : Control, Microcode and Hardwired
+Level 0 : Digital Logic, Gates and Circuits
