@@ -1,0 +1,24 @@
+# 19 Aug, 2022
+
+What is an Algebra?
+  - Set of symbols and rules for manipulating those symbols
+
+What is programming?
+  - Some symbols and rules for manipulating those symbols
+
+# function
+F1(x,y,z) = x + y'z
+
+F2(x,y) = xy + xy'
+
+F3(x,y,z) = x'y'z + x'yz + xy' => x'z + xy'
+
+F5(x,y) = (x + y)' (x' + y')'
+        = (x'y') (xy) Demorgan's law
+        = 0 NULL
+
+POS - Product of Sums
+F2(a,b,c) = (a+b) (a+c)
+
+SOP - Sum of Products
+F1(x,y,z) = X + xy + y'z
