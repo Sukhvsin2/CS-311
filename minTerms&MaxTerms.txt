@@ -1,0 +1,59 @@
+SOP - POS - minterm
+If a product teerm contains all the variables, either complimented or not complemented, 
+then the product term is called minterm.
+
+F1(x, y, z) = x + y'z
+
+   x y z   F1
+0. 0 0 0   0
+1. 0 0 1   1
+2. 0 1 0   0
+3. 0 1 1   0
+4. 1 0 0   1
+5. 1 0 1   1
+6. 1 1 0   1
+7. 1 1 1   1
+
+If a sum term contains all the variables, either complimented or not complemented, 
+then the sum is called maxterm.
+
+# number in Σ() are row numbers
+SOP, porduct terms, all minterms  - F1(x, y, z) = Σ(1, 4, 5, 6, 7)
+                                  - F1(x, y, z) = x'y'z + xy'z' + xy'z + xyz' + xyz
+# number in π() are row numbers                                  
+POS, sum terms, all maxterms  - F1(x, y, z) = π(0, 2, 3)
+                              - F1(x, y, z) = (x + y + z) (x' + y' + z) (x + y' + z)  <- complemented every variable
+
+Why need of these gates other than universal gates? -> Cheaper to Build
+
+XOR Gate =))>
+x y  x ⊕ y
+0 0    0
+0 1    1
+1 0    1
+1 1    0
+
+NAND Gate =)o
+x y =)o (xy)'
+
+NOR Gate =)>o
+x y =)>o (x+y)'
+
+
+Examples of NAND
+
+x --) 
+      0 - X'      Output is Not
+  |_)
+-------------------------------------------------
+#Karnaugh Map
+
+F2(x, y) = xy'    F2(x, y) = Σ(3)
+
+     0     1
+0 |(0,0) (0,1)|
+1 |(1,0) (1,1)|
+--------------------------------
+    0 1
+0 |
+1 | 1
