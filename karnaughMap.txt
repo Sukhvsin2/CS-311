@@ -1,0 +1,102 @@
+# Karnaugh Map
+
+F2(x, y) = x'y + xy'
+
+yaxis - x
+xaxis - y
+
+   0    1         0  1      
+0 x'y' x'y      0 0  1      1 - for True
+1 xy'  xy       1 1  0      0 - for False
+--------------------------------------------------------------------------------------
+
+F3(x, y, z) = x'yz' + x'yz + xy'z' + xy'z
+
+   x y z  F3
+m0 0 0 0  0
+m1 0 0 1  0
+m2 0 1 0  1
+m3 0 1 1  1
+m4 1 0 0  1
+m5 1 0 1  1
+m6 1 1 0  0
+m7 1 1 1  0
+
+= Σ(2,3,4,5)
+
+8 Boxes for it - 2^3
+yaxis - x
+xaxis - yz
+11 <-> 10 because there is supposed to be varry by only one variable.
+
+  00 01 11 10
+0 m0 m1 m3 m2
+1 m4 m5 m6 m7
+
+replacing m# with 1 compared with the expression F3
+
+  00 01 11 10
+0 m0 m1  1  1
+1  1  1 m6 m7
+
+= m3 + m2 (Adjacent Pair)
+= x'yz + x'yz'
+= x'y(z+z')
+= x'y(1) = x'y
+
+= m4 + m5 (Adjacent Pair)
+= xy'z' + xy'z
+= xy'(z'+z) = xy'(1) = xy'
+--------------------------------------------------------------------------------------
+
+F4(x, y, z) = Σ(3,5,7)
+            = x'yz + xy'z + xyz
+            
+  00 01 11 10
+0       m3 
+1    m5 m7
+
+Pair - m5+m7
+= xy'z + xyz
+= xz(1) = xz
+
+Pair - m7+m3
+= xyz + x'yz
+= yz(1) = yz
+
+F4 = xz + yz
+--------------------------------------------------------------------------------------
+
+Steps to Draw Karnaugh Map:
+  1. Draw and label the Map.
+  2. Mark cells for each min term.
+  3. Select adjacent cells.
+  4. Eleminate the complemented variable.
+--------------------------------------------------------------------------------------
+
+F5(x, y, z) = Σ(0, 2, 3, 6, 7)
+  00  01  11    10
+0 m0_|    |m2 |_m3|
+1       |m6     m7|
+
+
+  00  01  11 10
+0 1_|    |1 |_1|
+1        |1   1|
+
+
+m2+m3+m6+m7
+y
+
+m0 + m3
+x'y'z' + x'yz'
+x'z'
+
+F5 = x'z' + y
+--------------------------------------------------------------------------------------
+
+Rules:
+  - Form groups of adjacent 1's.
+  - Each group should be as large as possible.
+  - Cover every 1 atleast once.
+  - Select the least number of groups.
